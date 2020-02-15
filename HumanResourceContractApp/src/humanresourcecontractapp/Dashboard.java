@@ -35,7 +35,6 @@ public class Dashboard extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem11 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenuItem7 = new javax.swing.JMenuItem();
@@ -43,8 +42,8 @@ public class Dashboard extends javax.swing.JFrame {
         jMenuItem12 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem9 = new javax.swing.JMenuItem();
         jMenuItem10 = new javax.swing.JMenuItem();
+        jMenuItem9 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1366, 768));
@@ -86,17 +85,13 @@ public class Dashboard extends javax.swing.JFrame {
         jMenu2.add(jMenuItem4);
 
         jMenuItem5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jMenuItem5.setText("Profil SDM");
+        jMenuItem5.setText("Profil & Status");
         jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem5ActionPerformed(evt);
             }
         });
         jMenu2.add(jMenuItem5);
-
-        jMenuItem6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jMenuItem6.setText("Status SDM");
-        jMenu2.add(jMenuItem6);
 
         jMenuItem11.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jMenuItem11.setText("List SDM");
@@ -116,7 +111,7 @@ public class Dashboard extends javax.swing.JFrame {
         jMenu4.add(jMenuItem8);
 
         jMenuItem12.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jMenuItem12.setText("Pengurusan");
+        jMenuItem12.setText("Pengurusan Lembaran");
         jMenu4.add(jMenuItem12);
 
         jMenuBar1.add(jMenu4);
@@ -128,13 +123,13 @@ public class Dashboard extends javax.swing.JFrame {
         jMenuItem2.setText("Report File Pengurusan");
         jMenu3.add(jMenuItem2);
 
-        jMenuItem9.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jMenuItem9.setText("Report File Keterangan SDM");
-        jMenu3.add(jMenuItem9);
-
         jMenuItem10.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jMenuItem10.setText("Report File Kontrak SDM");
         jMenu3.add(jMenuItem10);
+
+        jMenuItem9.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jMenuItem9.setText("Report File Keterangan SDM");
+        jMenu3.add(jMenuItem9);
 
         jMenuBar1.add(jMenu3);
 
@@ -212,7 +207,6 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
