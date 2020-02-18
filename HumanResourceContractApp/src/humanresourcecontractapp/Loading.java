@@ -1,9 +1,13 @@
 package humanresourcecontractapp;
 
 
+import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.*;
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -24,9 +28,14 @@ public class Loading extends javax.swing.JFrame implements Runnable{
     Connection con;
     Statement stat;
     ResultSet rs;
-    String sql;
+    String sql,roleDB;
     int s=0 ;
     Thread th;
+    Login login;
+    
+    String admin = "Admin";
+    String staff = "Staff";
+    String karyawan = "Karyawan";
     
     public Loading() {
         initComponents();
@@ -39,26 +48,59 @@ public class Loading extends javax.swing.JFrame implements Runnable{
         th.start();
     }
     
-    public void run(){
+    public void run() {
         try{
             for (int i=0; i<=200;i++){
-                s=s+1;
+                s=s+20;
                 int m = jProgressBar1.getMaximum();
                 int v = jProgressBar1.getValue();
                 
                 if(v<m){
-                    jProgressBar1.setValue(jProgressBar1.getValue()+1);
+                    jProgressBar1.setValue(jProgressBar1.getValue()+5);
                 }else{
                     i=201;
                     setVisible(false);
-                    Dashboard db = new Dashboard();
-                    db.setVisible(true);
+                    ProccessRole(admin,staff,karyawan);
                 }
                 Thread.sleep(50);
             }
-        }catch(Exception e){
+        }catch(HeadlessException | InterruptedException e){
             //do nothing
+        } catch (SQLException ex) {
+            Logger.getLogger(Loading.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    
+    private void ProccessRole(String admin, String staff, String karyawan) throws SQLException, HeadlessException {
+        try
+        {
+            if (admin.equals(roleDB))
+            {
+                DashboardAdmin da = new DashboardAdmin();
+                da.setVisible(true);
+            }
+
+            if(staff.equals(roleDB))
+            {
+                DashboardStaff ds = new DashboardStaff();
+                ds.setVisible(true);
+            }
+
+            if(karyawan.equals(roleDB))
+            {
+                DashboardKaryawan dk = new DashboardKaryawan();
+                dk.setVisible(true);
+            }
+        }
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(null, "Role Tidak Ada");
+        }
+    }
+    
+    public void getRole(String receivedRole)
+    {
+        roleDB = receivedRole;
     }
     /**
      * This method is called from within the constructor to initialize the form.

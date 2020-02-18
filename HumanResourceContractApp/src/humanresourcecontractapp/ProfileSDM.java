@@ -9,12 +9,12 @@ package humanresourcecontractapp;
  *
  * @author achma
  */
-public class ProfilSDM extends javax.swing.JInternalFrame {
+public class ProfileSDM extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form ProfilSDM
      */
-    public ProfilSDM() {
+    public ProfileSDM() {
         initComponents();
     }
 

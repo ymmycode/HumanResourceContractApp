@@ -25,7 +25,8 @@ public class Login extends javax.swing.JFrame {
     Connection connection;
     Statement stat;
     ResultSet rs;
-    String sql;
+    String sql, roleDB;
+    Loading loading;
     
     public Login() {
         initComponents();
@@ -212,20 +213,20 @@ public class Login extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void ProccessAutenthication() throws HeadlessException, SQLException {
+    public void ProccessAutenthication() throws HeadlessException, SQLException {
         String username = jTextField1.getText();
         String password = jPasswordField1.getText();
-        sql = "SELECT * FROM account WHERE username='"+username+"' AND password='"+password+"'";
+        
+        
+        sql = "SELECT username,password,role FROM account WHERE username='"+username+"' AND password='"+password+"'";
         rs = stat.executeQuery(sql);
         if(rs.next()){
             if(username.equals(rs.getString("username")) && password.equals(rs.getString("password"))){
                 JOptionPane.showMessageDialog(null, "berhasil login");
-                
+                roleDB = rs.getString("role");//get role from database
+  
                 setVisible(false);
-                Loading load = new Loading();
-                load.setUpLoading();
-                load.setVisible(true);
-                
+                LoadingWindow();
                 this.dispose();
             }
             rs.close();
@@ -235,9 +236,19 @@ public class Login extends javax.swing.JFrame {
         }
     }
 
+    private void LoadingWindow() {
+        Loading load = new Loading();
+        load.getRole(roleDB);//passing role values to loading screen, imitate session
+        load.setUpLoading();
+        load.setVisible(true);
+    }
+
+    
+
     private void RegisterPage() {
         // TODO add your handling code here:
         Register rgs = new Register();
+        
         rgs.setVisible(true);
         this.setVisible(false);
     }

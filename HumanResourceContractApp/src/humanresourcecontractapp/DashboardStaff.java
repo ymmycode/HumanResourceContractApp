@@ -9,12 +9,12 @@ package humanresourcecontractapp;
  *
  * @author achma
  */
-public class Dashboard extends javax.swing.JFrame {
+public class DashboardStaff extends javax.swing.JFrame {
 
     /**
      * Creates new form Dashboard
      */
-    public Dashboard() {
+    public DashboardStaff() {
         initComponents();
     }
 
@@ -30,6 +30,7 @@ public class Dashboard extends javax.swing.JFrame {
         jDesktopPane1 = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
+        jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
@@ -46,7 +47,6 @@ public class Dashboard extends javax.swing.JFrame {
         jMenuItem9 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1366, 768));
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
@@ -62,8 +62,18 @@ public class Dashboard extends javax.swing.JFrame {
         jMenu1.setText("Akun");
         jMenu1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
+        jMenuItem6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jMenuItem6.setText("Akun");
+        jMenuItem6.setEnabled(false);
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem6);
+
         jMenuItem1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jMenuItem1.setText("Logout");
+        jMenuItem1.setText("Sign Out");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem1ActionPerformed(evt);
@@ -72,7 +82,12 @@ public class Dashboard extends javax.swing.JFrame {
         jMenu1.add(jMenuItem1);
 
         jMenuItem3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jMenuItem3.setText("Exit");
+        jMenuItem3.setText("Keluar");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem3);
 
         jMenuBar1.add(jMenu1);
@@ -82,6 +97,11 @@ public class Dashboard extends javax.swing.JFrame {
 
         jMenuItem4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jMenuItem4.setText("Tambah SDM");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem4);
 
         jMenuItem5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -95,6 +115,11 @@ public class Dashboard extends javax.swing.JFrame {
 
         jMenuItem11.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jMenuItem11.setText("List SDM");
+        jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem11ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem11);
 
         jMenuBar1.add(jMenu2);
@@ -104,14 +129,29 @@ public class Dashboard extends javax.swing.JFrame {
 
         jMenuItem7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jMenuItem7.setText("Kontrak Baru");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
         jMenu4.add(jMenuItem7);
 
         jMenuItem8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jMenuItem8.setText("Status Kontrak");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
         jMenu4.add(jMenuItem8);
 
         jMenuItem12.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jMenuItem12.setText("Pengurusan Lembaran");
+        jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem12ActionPerformed(evt);
+            }
+        });
         jMenu4.add(jMenuItem12);
 
         jMenuBar1.add(jMenu4);
@@ -121,10 +161,20 @@ public class Dashboard extends javax.swing.JFrame {
 
         jMenuItem2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jMenuItem2.setText("Report File Pengurusan");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem2);
 
         jMenuItem10.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jMenuItem10.setText("Report File Kontrak SDM");
+        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem10ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem10);
 
         jMenuItem9.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -151,11 +201,87 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
+        Login lgn = new Login();
+        lgn.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         // TODO add your handling code here:
+        ProfileSDM profile = new ProfileSDM();
+        jDesktopPane1.add(profile);
+        profile.setVisible(true);
+        profile.setLocation(jDesktopPane1.getWidth()/2-profile.getWidth()/2, jDesktopPane1.getHeight()/2-profile.getHeight()/2);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+        // TODO add your handling code here:
+        AdminAccount adcc = new AdminAccount();
+        jDesktopPane1.add(adcc);
+        adcc.setVisible(true);
+        adcc.setLocation(jDesktopPane1.getWidth()/2-adcc.getWidth()/2, jDesktopPane1.getHeight()/2-adcc.getHeight()/2);
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        // TODO add your handling code here:
+        AddNewSDM ans = new AddNewSDM();
+        jDesktopPane1.add(ans);
+        ans.setVisible(true);
+        ans.setLocation(jDesktopPane1.getWidth()/2-ans.getWidth()/2, jDesktopPane1.getHeight()/2-ans.getHeight()/2);
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
+        // TODO add your handling code here:
+        ListSDM list = new ListSDM();
+        jDesktopPane1.add(list);
+        list.setVisible(true);
+        list.setLocation(jDesktopPane1.getWidth()/2-list.getWidth()/2, jDesktopPane1.getHeight()/2-list.getHeight()/2);
+    }//GEN-LAST:event_jMenuItem11ActionPerformed
+
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+        // TODO add your handling code here:
+        NewContract newContract = new NewContract();
+        jDesktopPane1.add(newContract);
+        newContract.setVisible(true);
+        newContract.setLocation(jDesktopPane1.getWidth()/2-newContract.getWidth()/2, jDesktopPane1.getHeight()/2-newContract.getHeight()/2);
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
+
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        // TODO add your handling code here:
+        ContractStatus status = new ContractStatus();
+        jDesktopPane1.add(status);
+        status.setVisible(true);
+        status.setLocation(jDesktopPane1.getWidth()/2-status.getWidth()/2, jDesktopPane1.getHeight()/2-status.getHeight()/2);
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
+
+    private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
+        // TODO add your handling code here:
+        ContractPages conPages = new ContractPages();
+        jDesktopPane1.add(conPages);
+        conPages.setVisible(true);
+        conPages.setLocation(jDesktopPane1.getWidth()/2-conPages.getWidth()/2, jDesktopPane1.getHeight()/2-conPages.getHeight()/2);
+    }//GEN-LAST:event_jMenuItem12ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        ReportContractPages repCon = new ReportContractPages();
+        jDesktopPane1.add(repCon);
+        repCon.setVisible(true);
+        repCon.setLocation(jDesktopPane1.getWidth()/2-repCon.getWidth()/2, jDesktopPane1.getHeight()/2-repCon.getHeight()/2);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
+        // TODO add your handling code here:
+        ReportContractSDM repSDM = new ReportContractSDM();
+        jDesktopPane1.add(repSDM);
+        repSDM.setVisible(true);
+        repSDM.setLocation(jDesktopPane1.getWidth()/2-repSDM.getWidth()/2, jDesktopPane1.getHeight()/2-repSDM.getHeight()/2);
+    }//GEN-LAST:event_jMenuItem10ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -174,20 +300,23 @@ public class Dashboard extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DashboardStaff.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DashboardStaff.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DashboardStaff.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DashboardStaff.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Dashboard().setVisible(true);
+                new DashboardStaff().setVisible(true);
             }
         });
     }
@@ -207,6 +336,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
