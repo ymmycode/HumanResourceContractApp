@@ -33,10 +33,6 @@ public class Loading extends javax.swing.JFrame implements Runnable{
     Thread th;
     Login login;
     
-    String admin = "Admin";
-    String staff = "Staff";
-    String karyawan = "Karyawan";
-    
     public Loading() {
         initComponents();
         th = new Thread((Runnable)this);
@@ -60,7 +56,7 @@ public class Loading extends javax.swing.JFrame implements Runnable{
                 }else{
                     i=201;
                     setVisible(false);
-                    ProccessRole(admin,staff,karyawan);
+                    ProccessRole();//process roles and launch the main menu dasboard
                 }
                 Thread.sleep(50);
             }
@@ -71,25 +67,24 @@ public class Loading extends javax.swing.JFrame implements Runnable{
         }
     }
     
-    private void ProccessRole(String admin, String staff, String karyawan) throws SQLException, HeadlessException {
+    private void ProccessRole() throws SQLException, HeadlessException {
         try
         {
-            if (admin.equals(roleDB))
-            {
+            switch(roleDB) {
+            case "Admin":
                 DashboardAdmin da = new DashboardAdmin();
                 da.setVisible(true);
-            }
-
-            if(staff.equals(roleDB))
-            {
+              break;
+            case "Staff":
                 DashboardStaff ds = new DashboardStaff();
                 ds.setVisible(true);
-            }
-
-            if(karyawan.equals(roleDB))
-            {
+              break;
+            case "Karyawan":
                 DashboardKaryawan dk = new DashboardKaryawan();
                 dk.setVisible(true);
+              break;
+            default:
+                JOptionPane.showMessageDialog(null, "Role Tidak Ada");
             }
         }
         catch(Exception e)
@@ -98,10 +93,7 @@ public class Loading extends javax.swing.JFrame implements Runnable{
         }
     }
     
-    public void getRole(String receivedRole)
-    {
-        roleDB = receivedRole;
-    }
+    public void getRole(String receivedRole){roleDB = receivedRole;}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
