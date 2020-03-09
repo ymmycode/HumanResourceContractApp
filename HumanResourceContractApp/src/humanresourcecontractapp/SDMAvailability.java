@@ -8,6 +8,7 @@ package humanresourcecontractapp;
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.Statement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import net.proteanit.sql.DbUtils;
 
@@ -15,24 +16,28 @@ import net.proteanit.sql.DbUtils;
  *
  * @author achma
  */
-public class ContractStatus extends javax.swing.JInternalFrame {
+public class SDMAvailability extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form ContractStatus
      */
+    
     Connection connection;
     Statement stat;
     ResultSet rs;
-    String sql, usr;
+    String sql;
     
-    public ContractStatus() {
+    public SDMAvailability() {
         initComponents();
+        
         ConnectionDB condb = new ConnectionDB();
         condb.Config();
         connection = (Connection) condb.connect;
         stat = (Statement) condb.stmt;
-        CountContract();
+        
         Table();
+        Available();
+        Contracted();
     }
 
     /**
@@ -50,6 +55,8 @@ public class ContractStatus extends javax.swing.JInternalFrame {
         jTable1 = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
 
@@ -91,10 +98,23 @@ public class ContractStatus extends javax.swing.JInternalFrame {
 
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton2.setText("Close");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 153, 0));
+        jLabel2.setText("Available");
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 153, 0));
+        jLabel3.setText("XX");
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(153, 0, 0));
-        jLabel4.setText("Total Contract");
+        jLabel4.setText("Contracted");
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(153, 0, 0));
@@ -105,7 +125,10 @@ public class ContractStatus extends javax.swing.JInternalFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel3)
+                .addGap(49, 49, 49)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel5)
@@ -119,6 +142,8 @@ public class ContractStatus extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3)
                     .addComponent(jLabel4)
                     .addComponent(jLabel5))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -151,10 +176,34 @@ public class ContractStatus extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void CountContract()
-    {
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    public void Available(){
+    
         try {
-                sql = "SELECT COUNT(*) FROM contract "; 
+                sql = "SELECT COUNT(*) FROM sdmavailability where availability = '"+"Available"+"' "; 
+                rs = stat.executeQuery(sql);
+
+                if(rs.next()){
+                String m = rs.getString("COUNT(*)");
+
+                jLabel3.setText(m);
+
+                //rs.close();
+                //stat.close();
+                }
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(this, e.getMessage());
+            }    
+    }
+    
+    public void Contracted(){
+    
+        try {
+                sql = "SELECT COUNT(*) FROM sdmavailability where availability = '"+"Contracted"+"' "; 
                 rs = stat.executeQuery(sql);
 
                 if(rs.next()){
@@ -162,38 +211,31 @@ public class ContractStatus extends javax.swing.JInternalFrame {
 
                 jLabel5.setText(m);
 
-                //rs.close();
-                //stat.close();
+                rs.close();
+                stat.close();
                 }
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(this, e.getMessage());
-            }  
+            }    
     }
-    private void Table()
-    {
+    
+    public void Table(){
         try{
-            String sql = "SELECT\n" +
-                        "contract.id_contract,\n" +
-                        "contract.contractor_name,\n" +
-                        "constat.contractduration,\n" +
-                        "contract.contract_start,\n" +
-                        "contract.contract_end,\n" +
-                        "constat.contract_status\n" +
-                        "FROM\n" +
-                        "contract ,\n" +
-                        "constat";
+            sql = "SELECT * FROM sdmavailability";
             stat = (Statement) connection.prepareStatement(sql);
             rs = stat.executeQuery(sql);
 
             jTable1.setModel(DbUtils.resultSetToTableModel(rs));
-        }catch(Exception e){
+        }catch(SQLException e){
             JOptionPane.showMessageDialog(null, e);
         }
     }
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;

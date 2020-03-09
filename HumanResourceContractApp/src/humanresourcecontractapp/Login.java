@@ -6,11 +6,13 @@
 package humanresourcecontractapp;
 
 import java.awt.HeadlessException;
+import java.awt.event.KeyEvent;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
+import javax.swing.KeyStroke;
 
 /**
  *
@@ -105,6 +107,11 @@ public class Login extends javax.swing.JFrame {
         });
 
         jTextField1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField1KeyPressed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setText("Username :");
@@ -113,6 +120,16 @@ public class Login extends javax.swing.JFrame {
         jLabel3.setText("Password :");
 
         jPasswordField1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordField1ActionPerformed(evt);
+            }
+        });
+        jPasswordField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jPasswordField1KeyPressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -194,13 +211,13 @@ public class Login extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        dispose();
-        
+        System.exit(0);
         //TODO warning to ask admin to exit
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        RegisterPage();
+        //Todo change this to pin confirmation to register
+        Authorize();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -212,6 +229,21 @@ public class Login extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, e.getMessage());
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jTextField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyPressed
+        LoginAuthEnterKey(evt);
+    }//GEN-LAST:event_jTextField1KeyPressed
+
+    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jPasswordField1ActionPerformed
+
+    private void jPasswordField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPasswordField1KeyPressed
+        // TODO add your handling code here:
+         // TODO add your handling code here:
+        LoginAuthEnterKey(evt);
+    }//GEN-LAST:event_jPasswordField1KeyPressed
 
     public void ProccessAutenthication() throws HeadlessException, SQLException {
         String username = jTextField1.getText();
@@ -232,7 +264,29 @@ public class Login extends javax.swing.JFrame {
             rs.close();
             stat.close();
         }else{
-            JOptionPane.showMessageDialog(null, "username atau password salah");
+            JOptionPane.showMessageDialog(null, "Username atau Password salah");
+        }
+    }
+
+    public void LoginAuthEnterKey(KeyEvent evt) throws HeadlessException {
+        // TODO add your handling code here:
+        if (evt.getKeyCode()==KeyEvent.VK_ENTER){
+            if(jTextField1 == null && jPasswordField1 == null)
+            { 
+                JOptionPane.showMessageDialog(null , "Masukkan Username dan Password");
+                return;
+            }
+            else
+            {
+                try
+                {
+                    ProccessAutenthication();
+                }
+                catch (Exception e)
+                {
+                    JOptionPane.showMessageDialog(this, e.getMessage());
+                }
+            }
         }
     }
 
@@ -245,10 +299,9 @@ public class Login extends javax.swing.JFrame {
 
     
 
-    private void RegisterPage() {
+    private void Authorize() {
         // TODO add your handling code here:
-        Register rgs = new Register();
-        
+        PinAuthorize rgs = new PinAuthorize();
         rgs.setVisible(true);
         this.setVisible(false);
     }
