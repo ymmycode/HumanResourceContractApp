@@ -12,6 +12,7 @@ import java.awt.Container;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.sql.ResultSet;
 import java.util.HashMap;
 import java.util.Map;
@@ -94,9 +95,10 @@ public class ApprovementPageReport extends javax.swing.JInternalFrame {
             
             Map prs = new HashMap();
         
-            String reportPath = System.getProperty("user.dir") + "/src/Report/ApprovementReport.jrxml";
-        
-            JasperDesign jd1 = JRXmlLoader.load (new FileInputStream(new File(reportPath)));
+            //String reportPath = System.getProperty("user.dir") + "/src/Report/ApprovementReport.jrxml";
+            
+            InputStream filePath = getClass().getResourceAsStream("/Report/ApprovementReport.jrxml");
+            JasperDesign jd1 = JRXmlLoader.load (filePath);
             
             
             sql = "SELECT\n" +
