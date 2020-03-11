@@ -274,10 +274,10 @@ public class DashboardAdmin extends javax.swing.JFrame {
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
-        ReportContractPages repCon = new ReportContractPages();
-        jDesktopPane1.add(repCon);
-        repCon.setVisible(true);
-        repCon.setLocation(jDesktopPane1.getWidth()/2-repCon.getWidth()/2, jDesktopPane1.getHeight()/2-repCon.getHeight()/2);
+        ApprovementReport appRep = new ApprovementReport();
+        jDesktopPane1.add(appRep);
+        appRep.setVisible(true);
+        appRep.setLocation(jDesktopPane1.getWidth()/2-appRep.getWidth()/2, jDesktopPane1.getHeight()/2-appRep.getHeight()/2);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed

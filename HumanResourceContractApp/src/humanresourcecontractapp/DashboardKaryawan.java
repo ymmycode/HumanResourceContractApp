@@ -39,12 +39,12 @@ public class DashboardKaryawan extends javax.swing.JFrame {
         jMenuItem11 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenuItem7 = new javax.swing.JMenuItem();
-        jMenuItem8 = new javax.swing.JMenuItem();
         jMenuItem12 = new javax.swing.JMenuItem();
+        jMenuItem8 = new javax.swing.JMenuItem();
+        jMenuItem9 = new javax.swing.JMenuItem();
+        jMenuItem10 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem10 = new javax.swing.JMenuItem();
-        jMenuItem9 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -64,7 +64,6 @@ public class DashboardKaryawan extends javax.swing.JFrame {
 
         jMenuItem6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jMenuItem6.setText("Akun");
-        jMenuItem6.setEnabled(false);
         jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem6ActionPerformed(evt);
@@ -97,7 +96,6 @@ public class DashboardKaryawan extends javax.swing.JFrame {
 
         jMenuItem4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jMenuItem4.setText("Tambah SDM");
-        jMenuItem4.setEnabled(false);
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem4ActionPerformed(evt);
@@ -106,7 +104,7 @@ public class DashboardKaryawan extends javax.swing.JFrame {
         jMenu2.add(jMenuItem4);
 
         jMenuItem5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jMenuItem5.setText("Profil & Status");
+        jMenuItem5.setText("Profil SDM");
         jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem5ActionPerformed(evt);
@@ -130,13 +128,21 @@ public class DashboardKaryawan extends javax.swing.JFrame {
 
         jMenuItem7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jMenuItem7.setText("Kontrak Baru");
-        jMenuItem7.setEnabled(false);
         jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem7ActionPerformed(evt);
             }
         });
         jMenu4.add(jMenuItem7);
+
+        jMenuItem12.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jMenuItem12.setText("Surat Jalan");
+        jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem12ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(jMenuItem12);
 
         jMenuItem8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jMenuItem8.setText("Status Kontrak");
@@ -147,15 +153,23 @@ public class DashboardKaryawan extends javax.swing.JFrame {
         });
         jMenu4.add(jMenuItem8);
 
-        jMenuItem12.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jMenuItem12.setText("Pengurusan Lembaran");
-        jMenuItem12.setEnabled(false);
-        jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem9.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jMenuItem9.setText("Ketersediaan");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem12ActionPerformed(evt);
+                jMenuItem9ActionPerformed(evt);
             }
         });
-        jMenu4.add(jMenuItem12);
+        jMenu4.add(jMenuItem9);
+
+        jMenuItem10.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jMenuItem10.setText("Approvement");
+        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem10ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(jMenuItem10);
 
         jMenuBar1.add(jMenu4);
 
@@ -163,29 +177,13 @@ public class DashboardKaryawan extends javax.swing.JFrame {
         jMenu3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         jMenuItem2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jMenuItem2.setText("Report File Pengurusan");
-        jMenuItem2.setEnabled(false);
+        jMenuItem2.setText("Approvement File Kontrak");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem2ActionPerformed(evt);
             }
         });
         jMenu3.add(jMenuItem2);
-
-        jMenuItem10.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jMenuItem10.setText("Report File Kontrak SDM");
-        jMenuItem10.setEnabled(false);
-        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem10ActionPerformed(evt);
-            }
-        });
-        jMenu3.add(jMenuItem10);
-
-        jMenuItem9.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jMenuItem9.setText("Report File Keterangan SDM");
-        jMenuItem9.setEnabled(false);
-        jMenu3.add(jMenuItem9);
 
         jMenuBar1.add(jMenu3);
 
@@ -275,18 +273,26 @@ public class DashboardKaryawan extends javax.swing.JFrame {
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
-        ReportContractPages repCon = new ReportContractPages();
-        jDesktopPane1.add(repCon);
-        repCon.setVisible(true);
-        repCon.setLocation(jDesktopPane1.getWidth()/2-repCon.getWidth()/2, jDesktopPane1.getHeight()/2-repCon.getHeight()/2);
+        ApprovementReport appRep = new ApprovementReport();
+        jDesktopPane1.add(appRep);
+        appRep.setVisible(true);
+        appRep.setLocation(jDesktopPane1.getWidth()/2-appRep.getWidth()/2, jDesktopPane1.getHeight()/2-appRep.getHeight()/2);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+        // TODO add your handling code here:
+        SDMAvailability sda = new SDMAvailability();
+        jDesktopPane1.add(sda);
+        sda.setVisible(true);
+        sda.setLocation(jDesktopPane1.getWidth()/2-sda.getWidth()/2, jDesktopPane1.getHeight()/2-sda.getHeight()/2);
+    }//GEN-LAST:event_jMenuItem9ActionPerformed
 
     private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
         // TODO add your handling code here:
-        ReportContractSDM repSDM = new ReportContractSDM();
-        jDesktopPane1.add(repSDM);
-        repSDM.setVisible(true);
-        repSDM.setLocation(jDesktopPane1.getWidth()/2-repSDM.getWidth()/2, jDesktopPane1.getHeight()/2-repSDM.getHeight()/2);
+        ChangeAprrovementStatus cas = new ChangeAprrovementStatus();
+        jDesktopPane1.add(cas);
+        cas.setVisible(true);
+        cas.setLocation(jDesktopPane1.getWidth()/2-cas.getWidth()/2, jDesktopPane1.getHeight()/2-cas.getHeight()/2);
     }//GEN-LAST:event_jMenuItem10ActionPerformed
 
     /**

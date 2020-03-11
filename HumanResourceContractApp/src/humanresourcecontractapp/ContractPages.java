@@ -7,12 +7,29 @@ package humanresourcecontractapp;
 
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.Statement;
+import java.awt.BorderLayout;
+import java.awt.Container;
 import java.awt.HeadlessException;
 import java.awt.Image;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.design.JRDesignQuery;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
 
 /**
  *
@@ -220,6 +237,11 @@ public class ContractPages extends javax.swing.JInternalFrame {
 
         jButton4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton4.setText("Close");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton6.setText("Status Kontrak");
@@ -287,9 +309,58 @@ public class ContractPages extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jTextField7ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        try {
+            // TODO add your handling code here:
+            //Report
+            
+            String duration = jTextField7.getText();
+            
+            if (null != duration)
+                switch (duration) {
+                    case "12 Bulan":
+                        ReportOneYear();
+                        break;
+                    case "6 Bulan":
+                        ReportSixMonth();
+                        break;
+                    case "3 Bulan":
+                        ReportThreeMonth();
+                        break;
+                    default:
+                        break;
+                }
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(ContractPages.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void ReportOneYear() throws FileNotFoundException
+    {
+        String idContract = jTextField2.getText();
+        SuratJalan12 report12 = new SuratJalan12(idContract);
+        getParent().add(report12);
+        report12.setVisible(true);
+        report12.setLocation(getParent().getWidth()/2-report12.getWidth()/2, getParent().getHeight()/2-report12.getHeight()/2);
+    }
+    
+    private void ReportSixMonth() throws FileNotFoundException
+    {
+        String idContract = jTextField2.getText();
+        SuratJalan6 report6 = new SuratJalan6(idContract);
+        getParent().add(report6);
+        report6.setVisible(true);
+        report6.setLocation(getParent().getWidth()/2-report6.getWidth()/2, getParent().getHeight()/2-report6.getHeight()/2);
+    }
+    
+    private void ReportThreeMonth() throws FileNotFoundException
+    {
+        String idContract = jTextField2.getText();
+        SuratJalan3 report3 = new SuratJalan3(idContract);
+        getParent().add(report3);
+        report3.setVisible(true);
+        report3.setLocation(getParent().getWidth()/2-report3.getWidth()/2, getParent().getHeight()/2-report3.getHeight()/2);
+    }
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         
@@ -341,6 +412,11 @@ public class ContractPages extends javax.swing.JInternalFrame {
         status.setVisible(true);
         status.setLocation(getParent().getWidth()/2-status.getWidth()/2, getParent().getHeight()/2-status.getHeight()/2);
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_jButton4ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="99b64503-4859-428e-958c-29007a49d118">
+	<property name="ireport.zoom" value="1.771561000000011"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="750"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+id_contract,
+sdm_name,
+sdm_ttl,
+sdm_ktp,
+sdm_alamatasal,
+contractor_name,
+contractor_ktp,
+contractor_telp,
+contractor_address,
+contractor_naddress,
+contract_start,
+contract_end,
+contractor_subname,
+contractor_subage,
+payment_admin,
+payment_sdm,
+paymennt_cuti
+FROM
+contract]]>
+	</queryString>
+	<field name="id_contract" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sdm_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sdm_ttl" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sdm_ktp" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sdm_alamatasal" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="contractor_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="contractor_ktp" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="contractor_telp" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="contractor_address" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="contractor_naddress" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="contract_start" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="contract_end" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="contractor_subname" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="contractor_subage" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="payment_admin" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="payment_sdm" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="paymennt_cuti" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="id_contract">
+		<groupExpression><![CDATA[$F{id_contract}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="168" splitType="Stretch">
+			<image scaleImage="RetainShape" hAlign="Center">
+				<reportElement uuid="608c83d2-dcfa-42f0-a0ab-f05b938da21f" stretchType="RelativeToTallestObject" x="0" y="0" width="555" height="168"/>
+				<imageExpression><![CDATA["\\ImageReport\\HeaderB.JPG"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="297" splitType="Stretch">
+			<image hAlign="Center">
+				<reportElement uuid="a51efac0-dc23-48bf-89aa-18e5243727e9" x="0" y="0" width="555" height="297"/>
+				<imageExpression><![CDATA["\\ImageReport\\BodyL.JPG"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement uuid="40ca03db-3319-4ef7-8193-f57a761e764a" x="210" y="50" width="272" height="14"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{sdm_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a359e578-306a-4ed7-9443-e264016d289b" x="210" y="64" width="272" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{sdm_ttl}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a359e578-306a-4ed7-9443-e264016d289b" x="210" y="77" width="272" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{sdm_ktp}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a359e578-306a-4ed7-9443-e264016d289b" x="210" y="90" width="272" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{sdm_alamatasal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a359e578-306a-4ed7-9443-e264016d289b" x="210" y="139" width="272" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{contractor_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a359e578-306a-4ed7-9443-e264016d289b" x="210" y="166" width="272" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{contractor_ktp}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a359e578-306a-4ed7-9443-e264016d289b" x="210" y="179" width="272" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{contractor_telp}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a359e578-306a-4ed7-9443-e264016d289b" x="210" y="192" width="272" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{contractor_address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a359e578-306a-4ed7-9443-e264016d289b" x="210" y="242" width="95" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{contract_start}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a359e578-306a-4ed7-9443-e264016d289b" x="346" y="242" width="136" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{contract_end}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a359e578-306a-4ed7-9443-e264016d289b" x="210" y="255" width="272" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{contractor_subname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a359e578-306a-4ed7-9443-e264016d289b" x="210" y="268" width="272" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{contractor_subage}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a359e578-306a-4ed7-9443-e264016d289b" x="210" y="215" width="272" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{contractor_naddress}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="312" splitType="Stretch">
+			<image hAlign="Center">
+				<reportElement uuid="192a61f0-8328-448d-8db1-ebf356e94e03" x="0" y="228" width="555" height="84"/>
+				<imageExpression><![CDATA["\\ImageReport\\Footer2L.JPG"]]></imageExpression>
+			</image>
+			<image hAlign="Center">
+				<reportElement uuid="9b8e741b-cc8c-423b-ad28-1a1b5a8833b2" x="0" y="0" width="555" height="228"/>
+				<imageExpression><![CDATA["\\ImageReport\\Footer1B.JPG"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement uuid="a359e578-306a-4ed7-9443-e264016d289b" x="243" y="50" width="120" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{payment_admin}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a359e578-306a-4ed7-9443-e264016d289b" x="289" y="149" width="193" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{payment_sdm}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a359e578-306a-4ed7-9443-e264016d289b" x="224" y="172" width="122" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{paymennt_cuti}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>
