@@ -86,7 +86,7 @@ contract]]>
 		<band height="168" splitType="Stretch">
 			<image scaleImage="RetainShape" hAlign="Center">
 				<reportElement uuid="608c83d2-dcfa-42f0-a0ab-f05b938da21f" stretchType="RelativeToTallestObject" x="0" y="0" width="555" height="168"/>
-				<imageExpression><![CDATA["HeaderB.JPG"]]></imageExpression>
+				<imageExpression><![CDATA["https://drive.google.com/uc?export=view&id=18oXakdIEP8vbTQUaoQlSaJUMsuy-06NN"]]></imageExpression>
 			</image>
 		</band>
 	</title>
@@ -100,7 +100,7 @@ contract]]>
 		<band height="297" splitType="Stretch">
 			<image hAlign="Center">
 				<reportElement uuid="a51efac0-dc23-48bf-89aa-18e5243727e9" x="0" y="0" width="555" height="297"/>
-				<imageExpression><![CDATA["BodyL.JPG"]]></imageExpression>
+				<imageExpression><![CDATA["https://drive.google.com/uc?export=view&id=1QTdiU8grDNM8jzg4VDgys_fcTipL9IxU"]]></imageExpression>
 			</image>
 			<textField>
 				<reportElement uuid="40ca03db-3319-4ef7-8193-f57a761e764a" x="210" y="50" width="272" height="14"/>
@@ -179,11 +179,11 @@ contract]]>
 		<band height="312" splitType="Stretch">
 			<image hAlign="Center">
 				<reportElement uuid="192a61f0-8328-448d-8db1-ebf356e94e03" x="0" y="228" width="555" height="84"/>
-				<imageExpression><![CDATA["Footer2L.JPG"]]></imageExpression>
+				<imageExpression><![CDATA["https://drive.google.com/uc?export=view&id=1u9WiryO5l-o3lvVUcZDornB6Sv551K53"]]></imageExpression>
 			</image>
 			<image hAlign="Center">
 				<reportElement uuid="9b8e741b-cc8c-423b-ad28-1a1b5a8833b2" x="0" y="0" width="555" height="228"/>
-				<imageExpression><![CDATA["Footer1B.JPG"]]></imageExpression>
+				<imageExpression><![CDATA["https://drive.google.com/uc?export=view&id=1zzUNgaCt2zUaDPX8Ms1dx2ruueqz5MMn"]]></imageExpression>
 			</image>
 			<textField>
 				<reportElement uuid="a359e578-306a-4ed7-9443-e264016d289b" x="243" y="50" width="120" height="13"/>

@@ -65,7 +65,7 @@ conpage]]>
 			</textField>
 			<image hAlign="Center" vAlign="Middle">
 				<reportElement uuid="0daa69b2-4808-42a9-be02-3f1bdf5a7a3a" x="451" y="0" width="102" height="149"/>
-				<imageExpression><![CDATA["C:\\Users\\achma\\Documents\\NetBeansProjects\\HumanResourcesContractApp\\HumanResourceContractApp\\src\\Report\\PancaranKasih.JPG"]]></imageExpression>
+				<imageExpression><![CDATA["https://drive.google.com/uc?export=view&id=1hbM6vNiInDf7__VGFtjvU5doHtVTbfvN"]]></imageExpression>
 			</image>
 		</band>
 	</title>

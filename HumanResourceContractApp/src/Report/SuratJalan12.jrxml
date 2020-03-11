@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="99b64503-4859-428e-958c-29007a49d118">
 	<property name="ireport.zoom" value="1.771561000000011"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="174"/>
+	<property name="ireport.y" value="0"/>
 	<queryString language="SQL">
 		<![CDATA[SELECT
 id_contract,
@@ -86,7 +86,7 @@ contract]]>
 		<band height="168" splitType="Stretch">
 			<image scaleImage="RetainShape" hAlign="Center">
 				<reportElement uuid="608c83d2-dcfa-42f0-a0ab-f05b938da21f" stretchType="RelativeToTallestObject" x="0" y="0" width="555" height="168"/>
-				<imageExpression><![CDATA["HeaderL.JPG"]]></imageExpression>
+				<imageExpression><![CDATA["https://drive.google.com/uc?export=view&id=170KAiS5mDdxYmEHBomEp0O6g-6wrPmyE"]]></imageExpression>
 			</image>
 		</band>
 	</title>
@@ -100,7 +100,7 @@ contract]]>
 		<band height="297" splitType="Stretch">
 			<image hAlign="Center">
 				<reportElement uuid="a51efac0-dc23-48bf-89aa-18e5243727e9" x="0" y="0" width="555" height="297"/>
-				<imageExpression><![CDATA["BodyL.JPG"]]></imageExpression>
+				<imageExpression><![CDATA["https://drive.google.com/uc?export=view&id=1QTdiU8grDNM8jzg4VDgys_fcTipL9IxU"]]></imageExpression>
 			</image>
 			<textField>
 				<reportElement uuid="40ca03db-3319-4ef7-8193-f57a761e764a" x="210" y="50" width="272" height="14"/>
@@ -179,11 +179,11 @@ contract]]>
 		<band height="312" splitType="Stretch">
 			<image hAlign="Center">
 				<reportElement uuid="192a61f0-8328-448d-8db1-ebf356e94e03" x="0" y="228" width="555" height="84"/>
-				<imageExpression><![CDATA["Footer2L.JPG"]]></imageExpression>
+				<imageExpression><![CDATA["https://drive.google.com/uc?export=view&id=1u9WiryO5l-o3lvVUcZDornB6Sv551K53"]]></imageExpression>
 			</image>
 			<image hAlign="Center">
 				<reportElement uuid="9b8e741b-cc8c-423b-ad28-1a1b5a8833b2" x="0" y="0" width="555" height="228"/>
-				<imageExpression><![CDATA["Footer1L.JPG"]]></imageExpression>
+				<imageExpression><![CDATA["https://drive.google.com/uc?export=view&id=1LMszYPaqgt9KeqFROtep1MYgYs1KsJWj"]]></imageExpression>
 			</image>
 			<textField>
 				<reportElement uuid="a359e578-306a-4ed7-9443-e264016d289b" x="243" y="50" width="120" height="13"/>

@@ -16,16 +16,20 @@ public class ConnectionDB {
     Connection connect;
     Statement stmt;
     
-    String url = "jdbc:mysql://localhost/lpkpancarankasih";
+    String offlineUrl = "jdbc:mysql://localhost/lpkpancarankasih";
     String user = "root";
     String pass = "";
+    
+    String onlineUrl = "jdbc:mysql://167.XX.120.199/ymmycode_lpkpancarankasih";
+    String onUser = "ymmycode_XXXX";
+    String onPass = "XXXXXXX";
     
     public void Config()
     {
         try
         {
             Class.forName("com.mysql.jdbc.Driver");
-            connect = DriverManager.getConnection(url, user, pass);
+            connect = DriverManager.getConnection(offlineUrl, user, pass);
             stmt = connect.createStatement();
             System.out.print("Connection Success");
         }
