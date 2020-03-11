@@ -282,7 +282,7 @@ public class Login extends javax.swing.JFrame {
                 {
                     ProccessAutenthication();
                 }
-                catch (Exception e)
+                catch (HeadlessException | SQLException e)
                 {
                     JOptionPane.showMessageDialog(this, e.getMessage());
                 }

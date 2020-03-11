@@ -10,6 +10,7 @@ import com.mysql.jdbc.Statement;
 import java.awt.HeadlessException;
 import javax.swing.JOptionPane;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import net.proteanit.sql.DbUtils;
 
 /**
@@ -306,20 +307,20 @@ public class AdminAccount extends javax.swing.JInternalFrame {
         if (p==0){
             try{
                 
-                String sql = "DELETE FROM account WHERE username = '"+usr+"'";
+                sql = "DELETE FROM account WHERE username = '"+usr+"'";
                 
                 stat = (Statement) connection.prepareStatement(sql);
                 stat.execute(sql);
                 stat.close();
                 JOptionPane.showMessageDialog(null, "Akun Admin yang terpilih Berhasil Dihapus!");
                 Table();
-            }catch(Exception e){System.out.println(e);}
+            }catch(HeadlessException | SQLException e){System.out.println(e);}
         }
     }
 
     public void Table(){
         try{
-            String sql = "SELECT username, email, password, role FROM account";
+            sql = "SELECT username, email, password, role FROM account";
             stat = (Statement) connection.prepareStatement(sql);
             rs = stat.executeQuery(sql);
 
@@ -364,13 +365,13 @@ public class AdminAccount extends javax.swing.JInternalFrame {
         
         try{
             
-            String sql = "UPDATE account SET email='"+email+"', password='"+password+"', role='"+role+"' WHERE username='"+user+"'";
+            sql = "UPDATE account SET email='"+email+"', password='"+password+"', role='"+role+"' WHERE username='"+user+"'";
             stat = (Statement) connection.prepareStatement(sql);
             stat.execute(sql);
             
             JOptionPane.showMessageDialog(null, "Akun yaang terpilih berhasil di Update");
             Table();
-        }catch(Exception e){
+        }catch(HeadlessException | SQLException e){
             JOptionPane.showMessageDialog(null, e);
         }
     }

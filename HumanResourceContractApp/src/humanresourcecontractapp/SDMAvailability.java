@@ -195,7 +195,7 @@ public class SDMAvailability extends javax.swing.JInternalFrame {
                 //rs.close();
                 //stat.close();
                 }
-            } catch (Exception e) {
+            } catch (SQLException e) {
                 JOptionPane.showMessageDialog(this, e.getMessage());
             }    
     }
@@ -214,7 +214,7 @@ public class SDMAvailability extends javax.swing.JInternalFrame {
                 rs.close();
                 stat.close();
                 }
-            } catch (Exception e) {
+            } catch (SQLException e) {
                 JOptionPane.showMessageDialog(this, e.getMessage());
             }    
     }

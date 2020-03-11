@@ -213,7 +213,7 @@ public class Register extends javax.swing.JFrame {
             ProccessInput();
             Bersih();
             BackToLogin();
-        } catch (Exception e){
+        } catch (HeadlessException | SQLException e){
             System.out.println(e); 
         }
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -224,7 +224,7 @@ public class Register extends javax.swing.JFrame {
         String password = String.valueOf(jPasswordField1.getText());
         String role = (String) jComboBox2.getSelectedItem();
         
-        String sql = 
+        sql = 
             "INSERT INTO account(username,email,password,role) VALUES('"
                 +username+"','"
                 +email+"','"

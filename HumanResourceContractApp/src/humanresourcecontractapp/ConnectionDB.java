@@ -29,7 +29,7 @@ public class ConnectionDB {
             stmt = connect.createStatement();
             System.out.print("Connection Success");
         }
-        catch(Exception e)
+        catch(ClassNotFoundException | SQLException e)
         {
             System.out.print("Koneksi Gagal" +e.getMessage());
         }

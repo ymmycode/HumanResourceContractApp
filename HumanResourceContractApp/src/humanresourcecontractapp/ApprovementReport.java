@@ -5,8 +5,6 @@
  */
 package humanresourcecontractapp;
 
-import com.toedter.calendar.JCalendar;
-
 
 /**
  *

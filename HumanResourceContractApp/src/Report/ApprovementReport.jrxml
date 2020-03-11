@@ -44,9 +44,9 @@ conpage]]>
 	<title>
 		<band height="149" splitType="Stretch">
 			<frame>
-				<reportElement uuid="9e0e8e0b-e6de-4699-b602-942046a26bb8" mode="Opaque" x="0" y="0" width="553" height="95" backcolor="#000000"/>
+				<reportElement uuid="9e0e8e0b-e6de-4699-b602-942046a26bb8" mode="Opaque" x="0" y="0" width="451" height="95" backcolor="#000000"/>
 				<staticText>
-					<reportElement uuid="8c217c11-f8e3-4ed3-86af-aa4c98682cdb" style="Title" x="0" y="0" width="553" height="95"/>
+					<reportElement uuid="8c217c11-f8e3-4ed3-86af-aa4c98682cdb" style="Title" x="0" y="0" width="451" height="95"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font isBold="false"/>
 					</textElement>
@@ -57,12 +57,16 @@ conpage]]>
 				<reportElement uuid="07cad5ff-7c16-4be9-8cbc-60ac6fb937a9" mode="Opaque" x="0" y="100" width="451" height="32" forecolor="#000000" backcolor="#FFFFFF"/>
 			</frame>
 			<textField pattern="MMMMM-yy">
-				<reportElement uuid="4de0d34a-e95e-4bd7-b417-27a397f23368" x="398" y="95" width="155" height="54" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement uuid="4de0d34a-e95e-4bd7-b417-27a397f23368" x="296" y="95" width="155" height="54" forecolor="#000000" backcolor="#FFFFFF"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="12" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement uuid="0daa69b2-4808-42a9-be02-3f1bdf5a7a3a" x="451" y="0" width="102" height="149"/>
+				<imageExpression><![CDATA["C:\\Users\\achma\\Documents\\NetBeansProjects\\HumanResourcesContractApp\\HumanResourceContractApp\\src\\Report\\PancaranKasih.JPG"]]></imageExpression>
+			</image>
 		</band>
 	</title>
 	<pageHeader>

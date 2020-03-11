@@ -8,6 +8,7 @@ package humanresourcecontractapp;
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.Statement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import net.proteanit.sql.DbUtils;
 
@@ -287,36 +288,36 @@ public class ListSDM extends javax.swing.JInternalFrame {
     
     private void ListSDMTable(){
         try{
-            String sql = "SELECT id_sdm,nama,agama,suku,role,kekurangan,kelebihan FROM sdmprofile";
+            sql = "SELECT id_sdm,nama,agama,suku,role,kekurangan,kelebihan FROM sdmprofile";
             stat = (Statement) connection.prepareStatement(sql);
             rs = stat.executeQuery(sql);
 
             jTable1.setModel(DbUtils.resultSetToTableModel(rs));
-        }catch(Exception e){
+        }catch(SQLException e){
             JOptionPane.showMessageDialog(null, e);
         }
     }
     
     private void ARTTable(){
         try{
-            String sql = "SELECT id_sdm,nama,agama,suku FROM sdmprofile where role = '"+"ART"+"'";
+            sql = "SELECT id_sdm,nama,agama,suku FROM sdmprofile where role = '"+"ART"+"'";
             stat = (Statement) connection.prepareStatement(sql);
             rs = stat.executeQuery(sql);
 
             jTable2.setModel(DbUtils.resultSetToTableModel(rs));
-        }catch(Exception e){
+        }catch(SQLException e){
             JOptionPane.showMessageDialog(null, e);
         }
     }
     
     private void BSTable(){
         try{
-            String sql = "SELECT id_sdm,nama,agama,suku FROM sdmprofile where role = '"+"Baby Sitter"+"'";
+            sql = "SELECT id_sdm,nama,agama,suku FROM sdmprofile where role = '"+"Baby Sitter"+"'";
             stat = (Statement) connection.prepareStatement(sql);
             rs = stat.executeQuery(sql);
 
             jTable3.setModel(DbUtils.resultSetToTableModel(rs));
-        }catch(Exception e){
+        }catch(SQLException e){
             JOptionPane.showMessageDialog(null, e);
         }
     }
@@ -335,7 +336,7 @@ public class ListSDM extends javax.swing.JInternalFrame {
                 //rs.close();
                 //stat.close();
                 }
-            } catch (Exception e) {
+            } catch (SQLException e) {
                 JOptionPane.showMessageDialog(this, e.getMessage());
             }    
     }
@@ -354,7 +355,7 @@ public class ListSDM extends javax.swing.JInternalFrame {
                 //rs.close();
                 //stat.close();
                 }
-            } catch (Exception e) {
+            } catch (SQLException e) {
                 JOptionPane.showMessageDialog(this, e.getMessage());
             }    
     }
@@ -373,7 +374,7 @@ public class ListSDM extends javax.swing.JInternalFrame {
                 rs.close();
                 stat.close();
                 }
-            } catch (Exception e) {
+            } catch (SQLException e) {
                 JOptionPane.showMessageDialog(this, e.getMessage());
             }    
     }

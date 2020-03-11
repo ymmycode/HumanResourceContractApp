@@ -8,6 +8,7 @@ package humanresourcecontractapp;
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.Statement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import net.proteanit.sql.DbUtils;
 
@@ -165,14 +166,14 @@ public class ContractStatus extends javax.swing.JInternalFrame {
                 //rs.close();
                 //stat.close();
                 }
-            } catch (Exception e) {
+            } catch (SQLException e) {
                 JOptionPane.showMessageDialog(this, e.getMessage());
             }  
     }
     private void Table()
     {
         try{
-            String sql = "SELECT\n" +
+            sql = "SELECT\n" +
                         "contract.id_contract,\n" +
                         "contract.contractor_name,\n" +
                         "constat.contractduration,\n" +
@@ -186,7 +187,7 @@ public class ContractStatus extends javax.swing.JInternalFrame {
             rs = stat.executeQuery(sql);
 
             jTable1.setModel(DbUtils.resultSetToTableModel(rs));
-        }catch(Exception e){
+        }catch(SQLException e){
             JOptionPane.showMessageDialog(null, e);
         }
     }

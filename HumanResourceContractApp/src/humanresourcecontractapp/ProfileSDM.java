@@ -7,6 +7,7 @@ package humanresourcecontractapp;
 
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.Statement;
+import java.awt.HeadlessException;
 import java.awt.Image;
 import java.io.File;
 import java.sql.ResultSet;
@@ -482,7 +483,7 @@ public class ProfileSDM extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         //TODO Show profile search by id sdm,
         
-        String sql = "SELECT * FROM sdmprofile WHERE id_sdm='"+jTextField1.getText()+"'"; 
+        sql = "SELECT * FROM sdmprofile WHERE id_sdm='"+jTextField1.getText()+"'"; 
         try{
             stat = (Statement) connection.prepareStatement(sql);
             rs = stat.executeQuery(sql);
@@ -522,9 +523,9 @@ public class ProfileSDM extends javax.swing.JInternalFrame {
                 jLabel14.setText(add11);
                 
                 
-                String filename = rs.getString("foto");
+                filename = rs.getString("foto");
                 Image getAbsolutePath = null;
-                ImageIcon icon = new ImageIcon(filename);
+                icon = new ImageIcon(filename);
                 Image image = icon.getImage().getScaledInstance(jLabel2.getWidth(), jLabel2.getHeight(), Image.SCALE_SMOOTH);
                 jLabel2.setIcon(icon);
                 
@@ -533,7 +534,7 @@ public class ProfileSDM extends javax.swing.JInternalFrame {
             }else{
                 JOptionPane.showMessageDialog(null, "Mohon Masukkan Kode SDM yang sudah Terdaftar!");
             }
-        }catch(Exception e){
+        }catch(HeadlessException | SQLException e){
                 JOptionPane.showMessageDialog(null, e);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
