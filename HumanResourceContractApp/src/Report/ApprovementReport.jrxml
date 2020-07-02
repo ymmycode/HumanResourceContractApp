@@ -42,68 +42,93 @@ conpage]]>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="149" splitType="Stretch">
-			<frame>
-				<reportElement uuid="9e0e8e0b-e6de-4699-b602-942046a26bb8" mode="Opaque" x="0" y="0" width="451" height="95" backcolor="#000000"/>
-				<staticText>
-					<reportElement uuid="8c217c11-f8e3-4ed3-86af-aa4c98682cdb" style="Title" x="0" y="0" width="451" height="95"/>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font isBold="false"/>
-					</textElement>
-					<text><![CDATA[Lembaran Pengurusan]]></text>
-				</staticText>
-			</frame>
+		<band height="168" splitType="Stretch">
 			<frame>
 				<reportElement uuid="07cad5ff-7c16-4be9-8cbc-60ac6fb937a9" mode="Opaque" x="0" y="100" width="451" height="32" forecolor="#000000" backcolor="#FFFFFF"/>
 			</frame>
-			<textField pattern="MMMMM-yy">
-				<reportElement uuid="4de0d34a-e95e-4bd7-b417-27a397f23368" x="296" y="95" width="155" height="54" forecolor="#000000" backcolor="#FFFFFF"/>
-				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font size="12" isBold="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
-			</textField>
 			<image hAlign="Center" vAlign="Middle">
 				<reportElement uuid="0daa69b2-4808-42a9-be02-3f1bdf5a7a3a" x="451" y="0" width="102" height="149"/>
 				<imageExpression><![CDATA["https://drive.google.com/uc?export=view&id=1hbM6vNiInDf7__VGFtjvU5doHtVTbfvN"]]></imageExpression>
 			</image>
+			<staticText>
+				<reportElement uuid="8c217c11-f8e3-4ed3-86af-aa4c98682cdb" style="Title" x="0" y="22" width="451" height="95" forecolor="#000000"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Lembaran Pengurusan]]></text>
+			</staticText>
 		</band>
 	</title>
 	<pageHeader>
 		<band splitType="Stretch"/>
 	</pageHeader>
 	<columnHeader>
-		<band height="26" splitType="Stretch">
+		<band height="32" splitType="Stretch">
 			<staticText>
-				<reportElement uuid="00ab3221-05dc-4946-9fca-108bee312510" style="Column header" x="0" y="7" width="111" height="18" forecolor="#000000"/>
+				<reportElement uuid="00ab3221-05dc-4946-9fca-108bee312510" style="Column header" x="0" y="0" width="111" height="32" forecolor="#000000"/>
+				<box topPadding="0" leftPadding="1">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
 				<textElement>
 					<font isBold="false"/>
 				</textElement>
 				<text><![CDATA[No.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="4a2826c6-41fc-4660-8ae7-71163c866513" style="Column header" x="111" y="7" width="111" height="18" forecolor="#000000"/>
+				<reportElement uuid="4a2826c6-41fc-4660-8ae7-71163c866513" style="Column header" x="111" y="0" width="111" height="32" forecolor="#000000"/>
+				<box topPadding="0" leftPadding="1">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
 				<textElement>
 					<font isBold="false"/>
 				</textElement>
 				<text><![CDATA[No. Kontrak]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="3756eadc-560d-4dc5-9ec7-1865f99b6823" style="Column header" x="222" y="7" width="111" height="18" forecolor="#000000"/>
+				<reportElement uuid="3756eadc-560d-4dc5-9ec7-1865f99b6823" style="Column header" x="222" y="0" width="111" height="32" forecolor="#000000"/>
+				<box topPadding="0" leftPadding="1">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
 				<textElement>
 					<font isBold="false"/>
 				</textElement>
 				<text><![CDATA[Tannggal Dibuat]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="1f8a2a3a-856e-413e-85f4-cd73c2eff06c" style="Column header" x="333" y="7" width="111" height="18" forecolor="#000000"/>
+				<reportElement uuid="1f8a2a3a-856e-413e-85f4-cd73c2eff06c" style="Column header" x="333" y="0" width="111" height="32" forecolor="#000000"/>
+				<box topPadding="0" leftPadding="1">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
 				<textElement>
 					<font isBold="false"/>
 				</textElement>
 				<text><![CDATA[Persetujuan]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="2b7677a5-eeb8-4098-9469-49c293ae89b8" style="Column header" x="444" y="7" width="111" height="18" forecolor="#000000"/>
+				<reportElement uuid="2b7677a5-eeb8-4098-9469-49c293ae89b8" style="Column header" x="444" y="0" width="111" height="32" forecolor="#000000"/>
+				<box topPadding="0" leftPadding="1">
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
 				<textElement>
 					<font isBold="false"/>
 				</textElement>
@@ -112,11 +137,18 @@ conpage]]>
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="18" splitType="Stretch">
+		<band height="23" splitType="Stretch">
 			<frame>
 				<reportElement uuid="090b505f-aeb8-4f95-bfd2-c796739fb781" style="Row" mode="Opaque" x="0" y="0" width="555" height="18"/>
 				<textField isStretchWithOverflow="true">
 					<reportElement uuid="41c1daaa-e8c6-4afe-8bdc-a9108d79ee55" style="Detail" positionType="Float" x="0" y="0" width="111" height="18"/>
+					<box topPadding="0" leftPadding="1">
+						<pen lineWidth="1.0" lineStyle="Solid"/>
+						<topPen lineWidth="1.0" lineStyle="Solid"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid"/>
+					</box>
 					<textElement>
 						<font size="14"/>
 					</textElement>
@@ -124,6 +156,13 @@ conpage]]>
 				</textField>
 				<textField isStretchWithOverflow="true">
 					<reportElement uuid="a6fc1f3e-f8d6-4c27-91a4-24f5325bf5ab" style="Detail" positionType="Float" x="111" y="0" width="111" height="18"/>
+					<box topPadding="0" leftPadding="1">
+						<pen lineWidth="1.0" lineStyle="Solid"/>
+						<topPen lineWidth="1.0" lineStyle="Solid"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid"/>
+					</box>
 					<textElement>
 						<font size="14"/>
 					</textElement>
@@ -131,6 +170,13 @@ conpage]]>
 				</textField>
 				<textField isStretchWithOverflow="true">
 					<reportElement uuid="1020fdbb-e577-4060-ad3c-6d2079579499" style="Detail" positionType="Float" x="222" y="0" width="111" height="18"/>
+					<box topPadding="0" leftPadding="1">
+						<pen lineWidth="1.0" lineStyle="Solid"/>
+						<topPen lineWidth="1.0" lineStyle="Solid"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid"/>
+					</box>
 					<textElement>
 						<font size="14"/>
 					</textElement>
@@ -138,6 +184,13 @@ conpage]]>
 				</textField>
 				<textField isStretchWithOverflow="true">
 					<reportElement uuid="8a285b7f-ab48-4271-a4d5-360e1345b27f" style="Detail" positionType="Float" x="333" y="0" width="111" height="18"/>
+					<box topPadding="0" leftPadding="1">
+						<pen lineWidth="1.0" lineStyle="Solid"/>
+						<topPen lineWidth="1.0" lineStyle="Solid"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid"/>
+					</box>
 					<textElement>
 						<font size="14"/>
 					</textElement>
@@ -145,6 +198,13 @@ conpage]]>
 				</textField>
 				<textField isStretchWithOverflow="true">
 					<reportElement uuid="5ab077ed-2897-444c-9eec-6e1927f42c57" style="Detail" positionType="Float" x="444" y="0" width="111" height="18"/>
+					<box topPadding="0" leftPadding="1">
+						<pen lineWidth="1.0" lineStyle="Solid"/>
+						<topPen lineWidth="1.0" lineStyle="Solid"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid"/>
+					</box>
 					<textElement>
 						<font size="14"/>
 					</textElement>
@@ -154,7 +214,7 @@ conpage]]>
 		</band>
 	</detail>
 	<columnFooter>
-		<band height="7" splitType="Stretch">
+		<band height="6" splitType="Stretch">
 			<line>
 				<reportElement uuid="ce7dddff-4cfb-46da-a4b3-36d5121c32ed" positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1"/>
 				<graphicElement>
@@ -164,31 +224,35 @@ conpage]]>
 		</band>
 	</columnFooter>
 	<pageFooter>
-		<band height="25" splitType="Stretch">
-			<frame>
-				<reportElement uuid="2046ee4e-34db-4287-8fe9-0c531a2f4ab7" mode="Opaque" x="0" y="1" width="555" height="24" forecolor="#D0B48E" backcolor="#000000"/>
-				<textField evaluationTime="Report">
-					<reportElement uuid="5e373d48-76cf-4b87-84eb-d95c8a857464" style="Column header" x="513" y="0" width="40" height="20" forecolor="#FFFFFF"/>
-					<textElement verticalAlignment="Middle">
-						<font size="10" isBold="false"/>
-					</textElement>
-					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
-				</textField>
-				<textField>
-					<reportElement uuid="524c9920-0866-47cd-949b-a09c2fc95af0" style="Column header" x="433" y="0" width="80" height="20" forecolor="#FFFFFF"/>
-					<textElement textAlignment="Right" verticalAlignment="Middle">
-						<font size="10" isBold="false"/>
-					</textElement>
-					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
-				</textField>
-				<textField pattern="EEEEE dd MMMMM yyyy">
-					<reportElement uuid="de3f962e-676a-4ea5-a3c7-309e4af33f24" style="Column header" x="2" y="1" width="197" height="20" forecolor="#FFFFFF"/>
-					<textElement verticalAlignment="Middle">
-						<font size="10" isBold="false"/>
-					</textElement>
-					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
-				</textField>
-			</frame>
+		<band height="123" splitType="Stretch">
+			<textField pattern="dd MMMMM yyyy">
+				<reportElement uuid="4de0d34a-e95e-4bd7-b417-27a397f23368" x="469" y="0" width="84" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="f8bf043b-0585-430f-97d5-301c175e7550" x="423" y="0" width="46" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Jakarta,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f8bf043b-0585-430f-97d5-301c175e7550" x="423" y="102" width="130" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[(Direktur)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f8bf043b-0585-430f-97d5-301c175e7550" x="423" y="82" width="130" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Theresia Minarsih]]></text>
+			</staticText>
 		</band>
 	</pageFooter>
 	<summary>

@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package humanresourcecontractapp;
-
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.Statement;
 import java.awt.BorderLayout;
@@ -27,33 +26,31 @@ import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.design.JRDesignQuery;
 import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
-
 /**
  *
  * @author achma
  */
-public class ApprovementPageReport extends javax.swing.JInternalFrame {
+public class ReportPenyaluran extends javax.swing.JInternalFrame {
 
     /**
-     * Creates new form ApprovementPageReport
+     * Creates new form ReportPenyaluran
      */
-    
     Connection connection;
     Statement stat;
     ResultSet rs;
     String sql,nowMonth;
     
-    public ApprovementPageReport(String month) {
-        try {
+    public ReportPenyaluran(String month) {
+         try {
             initComponents();
             ConnectionDB condb = new ConnectionDB();
             condb.Config();
             connection = (Connection) condb.connect;
             stat = (Statement) condb.stmt;
             nowMonth = month;
-            SixMonth();
+            ReportPages();
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(SuratJalan6.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ReportPenyaluran.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -84,7 +81,8 @@ public class ApprovementPageReport extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-        private void SixMonth() throws FileNotFoundException
+    
+    private void ReportPages() throws FileNotFoundException
     {
         try{
             ConnectionDB condb = new ConnectionDB();
@@ -96,20 +94,26 @@ public class ApprovementPageReport extends javax.swing.JInternalFrame {
         
             //String reportPath = System.getProperty("user.dir") + "/src/Report/ApprovementReport.jrxml";
             
-            InputStream filePath = getClass().getResourceAsStream("/Report/ApprovementReport.jrxml");
+            InputStream filePath = getClass().getResourceAsStream("/Report/ReportPenyaluran.jrxml");
             JasperDesign jd1 = JRXmlLoader.load (filePath);
             
             
             sql = "SELECT\n" +
-                    "no_page,\n" +
-                    "id_contract,\n" +
-                    "date_created,\n" +
-                    "approve,\n" +
-                    "date_approved\n" +
+                    "penyaluran.`no`,\n" +
+                    "penyaluran.tanggal,\n" +
+                    "penyaluran.id_contract,\n" +
+                    "penyaluran.sdmName,\n" +
+                    "penyaluran.gaji,\n" +
+                    "penyaluran.`status`,\n" +
+                    "penyaluran.jumlah,\n" +
+                    "penyaluran.setoran,\n" +
+                    "penyaluran.sertifikat,\n" +
+                    "penyaluran.seragam,\n" +
+                    "penyaluran.keterangan\n" +
                     "FROM\n" +
-                    "conpage\n" +
+                    "penyaluran\n"+
                     "WHERE\n" +
-                    "date_approved  LIKE '% "+nowMonth+" %'";
+                    "tanggal  LIKE '% "+nowMonth+" %'";
             JRDesignQuery newQuery = new JRDesignQuery();
             newQuery.setText(sql);
             jd1.setQuery(newQuery);

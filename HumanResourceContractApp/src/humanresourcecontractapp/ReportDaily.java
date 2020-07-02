@@ -27,23 +27,22 @@ import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.design.JRDesignQuery;
 import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
-
 /**
  *
  * @author achma
  */
-public class ApprovementPageReport extends javax.swing.JInternalFrame {
+public class ReportDaily extends javax.swing.JInternalFrame {
 
     /**
-     * Creates new form ApprovementPageReport
+     * Creates new form ReportDaily
      */
-    
     Connection connection;
     Statement stat;
     ResultSet rs;
     String sql,nowMonth;
-    
-    public ApprovementPageReport(String month) {
+        
+    public ReportDaily(String month) {
+        
         try {
             initComponents();
             ConnectionDB condb = new ConnectionDB();
@@ -51,9 +50,9 @@ public class ApprovementPageReport extends javax.swing.JInternalFrame {
             connection = (Connection) condb.connect;
             stat = (Statement) condb.stmt;
             nowMonth = month;
-            SixMonth();
+            ReportPages();
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(SuratJalan6.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ReportDaily.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -78,13 +77,13 @@ public class ApprovementPageReport extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 274, Short.MAX_VALUE)
+            .addGap(0, 282, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-        private void SixMonth() throws FileNotFoundException
+    private void ReportPages() throws FileNotFoundException
     {
         try{
             ConnectionDB condb = new ConnectionDB();
@@ -96,20 +95,29 @@ public class ApprovementPageReport extends javax.swing.JInternalFrame {
         
             //String reportPath = System.getProperty("user.dir") + "/src/Report/ApprovementReport.jrxml";
             
-            InputStream filePath = getClass().getResourceAsStream("/Report/ApprovementReport.jrxml");
+            InputStream filePath = getClass().getResourceAsStream("/Report/ReportDaily.jrxml");
             JasperDesign jd1 = JRXmlLoader.load (filePath);
             
             
             sql = "SELECT\n" +
-                    "no_page,\n" +
-                    "id_contract,\n" +
-                    "date_created,\n" +
-                    "approve,\n" +
-                    "date_approved\n" +
+                    "daily.`no`,\n" +
+                    "daily.tglsalur,\n" +
+                    "daily.nokwitansi,\n" +
+                    "daily.namamajikan,\n" +
+                    "daily.namaart,\n" +
+                    "daily.`status`,\n" +
+                    "daily.rekrut,\n" +
+                    "daily.saluradm,\n" +
+                    "daily.admbaru,\n" +
+                    "daily.salurganti,\n" +
+                    "daily.admganti,\n" +
+                    "daily.komisisalur,\n" +
+                    "daily.komisicso,\n" +
+                    "daily.keterangan\n" +
                     "FROM\n" +
-                    "conpage\n" +
+                    "daily\n"+
                     "WHERE\n" +
-                    "date_approved  LIKE '% "+nowMonth+" %'";
+                    "tglsalur  LIKE '% "+nowMonth+" %'";
             JRDesignQuery newQuery = new JRDesignQuery();
             newQuery.setText(sql);
             jd1.setQuery(newQuery);
@@ -124,7 +132,6 @@ public class ApprovementPageReport extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(null, e);
         }
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
 }
