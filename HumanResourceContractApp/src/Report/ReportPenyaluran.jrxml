@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="eb3c4121-3d8b-4915-9cba-1f90715b0e52">
-	<property name="ireport.zoom" value="1.771561000000001"/>
-	<property name="ireport.x" value="12"/>
+	<property name="ireport.zoom" value="1.2100000000000006"/>
+	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
 	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
@@ -392,20 +392,6 @@
 	</detail>
 	<pageFooter>
 		<band height="136" splitType="Stretch">
-			<textField pattern="EEEEE dd MMMMM yyyy">
-				<reportElement uuid="4de0d34a-e95e-4bd7-b417-27a397f23368" x="677" y="20" width="115" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
-				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font size="12" isBold="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[new SimpleDateFormat("EEEE, dd MMMM yyyy", new java.util.Locale("id")).format(new java.util.Date())]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement uuid="f8bf043b-0585-430f-97d5-301c175e7550" x="631" y="20" width="46" height="20"/>
-				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font size="12"/>
-				</textElement>
-				<text><![CDATA[Jakarta,]]></text>
-			</staticText>
 			<staticText>
 				<reportElement uuid="f8bf043b-0585-430f-97d5-301c175e7550" x="648" y="113" width="130" height="20"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -420,6 +406,20 @@
 				</textElement>
 				<text><![CDATA[(Direktur)]]></text>
 			</staticText>
+			<staticText>
+				<reportElement uuid="f8bf043b-0585-430f-97d5-301c175e7550" x="631" y="20" width="46" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Bekasi,]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement uuid="4de0d34a-e95e-4bd7-b417-27a397f23368" x="648" y="20" width="140" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("EEEE, dd MMMM yyyy", new java.util.Locale("id")).format(new java.util.Date())]]></textFieldExpression>
+			</textField>
 		</band>
 	</pageFooter>
 	<summary>
